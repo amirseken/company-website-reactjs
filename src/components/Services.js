@@ -2,7 +2,11 @@ import Card from "./Card";
 function Services() {
   return (
     <div className="container services">
-        <h2 className="main-title text-center">SERVICES</h2>
+        <div>
+            <h2 className="main-title text-center">SERVICES</h2>
+        </div>
+         {/*add Approach Model, Business Model research, and Our Work sections*/}
+
         <div className="card-cover">
             <div className="col-md-12">
                 <div className="row">

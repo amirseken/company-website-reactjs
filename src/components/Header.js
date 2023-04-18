@@ -1,19 +1,16 @@
 function Header() {
   return (
     <header>
-      <video src="./video.mp4" loop autoPlay muted></video>
-      <h1>Open Source Website</h1>
-      <div className="row">
-        <button className="btn" style={{ cursor: "pointer" }}>
-          Sign Up
-        </button>
+      <link rel="stylesheet" href="../index.css"/>
 
-        <button className="btn" style={{ cursor: "pointer" }}>
-          Log in
-        </button>
+      <video src={require("../public/video.mp4")} loop autoPlay muted></video>
+
+      <img className= "companyImage" width = "800px" height = "300px"
+      src={require("../public/img/Systemiai cover (2).png")}></img>
+      <div className="row slogan">
+        <i>Let's Think System.</i>
       </div>
 
-      <div className="headerbg"></div>
     </header>
   );
 }

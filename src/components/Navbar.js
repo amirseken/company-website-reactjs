@@ -1,49 +1,19 @@
 import { Link } from "react-scroll";
 
-function Navbar() {
-  document.addEventListener("scroll", function (e) {
-    if (window.screen.width < 768 && window.scrollY > 690) {
-      const gotop = document.querySelector(".gotop");
-      gotop.classList.add("display");
-
-      const nav = document.querySelector(".navbar");
-
-      nav.classList.add("navopened");
-    } else if (window.screen.width > 768 && window.scrollY > 220) {
-      const gotop = document.querySelector(".gotop");
-      gotop.classList.add("display");
-
-      const nav = document.querySelector(".navbar");
-
-      nav.classList.add("navopened");
-    } else {
-      const nav = document.querySelector(".navbar");
-      const gotop = document.querySelector(".gotop");
-      gotop.classList.remove("display");
-      nav.classList.remove("navopened");
-    }
-  });
-  function openBar() {
+function Navbar({changeState}) {
+ 
+  function openBar(e) {
+    changeState(e.target.innerHTML);
     const bar = document.querySelector(".bar");
 
     bar.classList.toggle("opened");
   }
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" background-color="black"> 
       <div className="container">
-        <div className="row">
-          <h1 className="logo">
-            <Link
-              spy={true}
-              smooth={true}
-              duration={1000}
-              to="headerbg"
-              style={{ cursor: "pointer" }}
-            >
-              DarkLeas
-            </Link>
-          </h1>
+      <div className="row">
+
           <ul className="bar">
             <li>
               <Link
@@ -52,33 +22,35 @@ function Navbar() {
                 spy={true}
                 smooth={true}
                 duration={1000}
-                to="headerbg"
+                to="mainBody"
               >
                 Home
               </Link>
             </li>
+            
             <li>
               <Link
                 onClick={openBar}
-                activeClass="active"
-                to="services"
+                to="mainBody"
                 spy={true}
                 smooth={true}
                 duration={1000}
+               
               >
-                Services
+                Products
               </Link>
             </li>
             <li>
               <Link
                 onClick={openBar}
-                to="about-scroll"
+                activeClass="active"
+                to="mainBody"
                 spy={true}
                 smooth={true}
                 duration={1000}
-                activeClass="active"
+               
               >
-                About
+                Careers
               </Link>
             </li>
             <li>
@@ -94,11 +66,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <div className="button" onClick={openBar}>
-            <div className="burger"></div>
-            <div className="burger"></div>
-            <div className="burger"></div>
-          </div>
+          
         </div>
       </div>
     </nav>

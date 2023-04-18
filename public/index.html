@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+    
+    <link rel="stylesheet" href="../src/index.css"/>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/faviconAI.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <script src="https://kit.fontawesome.com/82245a89d3.js" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="SYSTEMIAI" content="Web site created using create-react-app"/>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/img/Systemiai 07.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Burhan Kocadag - Open Source website</title>
+    <title>SYSTEMIAI - Let's Think System.</title>
+
+    <div id = "cookiesAllow" class="cookie-consent" >
+    
+      <span>This site uses cookies to enhance user experience.</span>
+      <a href="/documents/Systemiai Website Privacy Policy.pdf" 
+      target="_blank" download="Privacy Policy.pdf" >Privacy policy</a> 
+      <a href="/documents/Website Terms & Conditions or Terms of Use.pdf" 
+      target="_blank" download="Terms & Conditions.pdf" > Terms & Conditions</a> 
+      <button onclick = "acceptCookies()">Allow Cookies</button>
+    
+    </div>
+  
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+
+  <script>
+    
+    function acceptCookies(){
+      document.getElementById("cookiesAllow").style.display = "none";
+    }
+
+  </script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){emailjs.init("7WV3RCUNc9Tubx1RC"); // Obtain your user ID at the dashboard https://dashboard.emailjs.com/integration
+    })();
+  </script>
+  
 </html>

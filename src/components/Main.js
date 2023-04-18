@@ -1,14 +1,26 @@
 import About from '../components/About';
-import Services from '../components/Services';
-import Contact from '../components/Contact';
 
-function Main() {
+import Contact from '../components/Contact';
+import Products from '../components/Products';
+import Careers from '../components/Careers';
+
+function Main({clickState}) {
+  console.log("Current click state:"+clickState);
   return (
     <>
-      <main>
-        <Services />
-        <About />
+      <main className="mainBody">
+        {clickState === 'Home' &&
+          <About />
+        }
+        {clickState === 'Products' &&
+          <Products />
+        }
+        {clickState === 'Careers' &&
+          <Careers />
+        }
+        
         <Contact />
+        
       </main>
     </>
   );
